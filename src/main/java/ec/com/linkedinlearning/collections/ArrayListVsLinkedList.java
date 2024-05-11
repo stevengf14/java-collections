@@ -34,6 +34,12 @@ public class ArrayListVsLinkedList {
         addCompare(arrayList, linkedList, LIM / 2, -4);
         addCompare(arrayList, linkedList, 3 * LIM / 4, -5);
         addCompare(arrayList, linkedList, LIM - 1, -6);
+
+        containsCompare(arrayList, linkedList, -2);
+        containsCompare(arrayList, linkedList, -3);
+        containsCompare(arrayList, linkedList, -4);
+        containsCompare(arrayList, linkedList, -5);
+        containsCompare(arrayList, linkedList, -6);
     }
 
     public static void getCompare(List<Integer> arrayList, List<Integer> linkedList, int position) {
@@ -78,6 +84,22 @@ public class ArrayListVsLinkedList {
         linkedList.add(position, value);
         long milisD = System.currentTimeMillis();
         System.out.println("linkedList.add(" + position + "): " + (milisD - milisC));
+
+        System.out.println();
+    }
+
+    public static void containsCompare(List<Integer> arrayList, List<Integer> linkedList, int value) {
+        System.out.println("Contains Compare, value: " + value);
+
+        long milisA = System.currentTimeMillis();
+        arrayList.contains(value);
+        long milisB = System.currentTimeMillis();
+        System.out.println("arrayList.contains(" + value + "): " + (milisB - milisA));
+
+        long milisC = System.currentTimeMillis();
+        linkedList.contains(value);
+        long milisD = System.currentTimeMillis();
+        System.out.println("linkedList.contains(" + value + "): " + (milisD - milisC));
 
         System.out.println();
     }
