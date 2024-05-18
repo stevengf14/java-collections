@@ -31,7 +31,7 @@ public class ObjectsClass {
         Dummy hello = new Dummy("hello");
         System.out.println(hello.something());
         Dummy isNull = new Dummy(null);
-        System.out.println(isNull.something());
+        // System.out.println(isNull.something());
 
         if (Objects.isNull(isNull)) {
             System.out.println("Don't do anything");
